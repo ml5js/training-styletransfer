@@ -4,7 +4,7 @@ LABEL maintainer="Cris Valenzuela <cv965@nyu.edu>"
 
 RUN apt-get update
 RUN apt-get install wget -y
-RUN apt-get install ffmpeg
+RUN apt-get install libav-tools
 
 # Copy all files in directory
 COPY . /styletransfer
