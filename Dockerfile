@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:1.4.1-gpu
 
 LABEL maintainer="Cris Valenzuela <cv965@nyu.edu>"
 
