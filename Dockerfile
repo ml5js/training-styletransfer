@@ -7,7 +7,7 @@ RUN apt-get install wget -y
 RUN apt-get update && apt-get install -y software-properties-common
 
 # Install "ffmpeg"
-RUN add-apt-repository ppa:mc3man/trusty-media
+RUN add-apt-repository ppa:mc3man/xerus-media
 RUN apt-get update && apt-get install -y ffmpeg
 
 # Copy all files in directory

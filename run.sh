@@ -2,6 +2,7 @@
 
 python style.py --style images/matildeperez.jpg \
   --checkpoint-dir checkpoints/ \
+  --model-dir models/ \
   --test images/violetaparra.jpg \
   --test-dir tests/ \
   --content-weight 1.5e1 \

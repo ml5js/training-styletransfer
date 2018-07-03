@@ -6,6 +6,7 @@ from optimize import optimize
 from argparse import ArgumentParser
 from utils import save_img, get_img, exists, list_files
 import evaluate
+from dump_checkpoints import dump_checkpoints
 
 CONTENT_WEIGHT = 7.5e0
 STYLE_WEIGHT = 1e2
@@ -17,12 +18,16 @@ CHECKPOINT_DIR = 'checkpoints'
 CHECKPOINT_ITERATIONS = 2000
 VGG_PATH = 'data/imagenet-vgg-verydeep-19.mat'
 TRAIN_PATH = 'data/train2014'
+MODEL_PATH = 'models'
 BATCH_SIZE = 4
 DEVICE = '/gpu:0'
 FRAC_GPU = 1
 
 def build_parser():
     parser = ArgumentParser()
+    parser.add_argument('--model-dir', type=str,
+                        dest='model_dir', help='dir to save ml5 models in',
+                        metavar='MODELS_DIR', default=MODEL_PATH)
     parser.add_argument('--checkpoint-dir', type=str,
                         dest='checkpoint_dir', help='dir to save checkpoint in',
                         metavar='CHECKPOINT_DIR', required=True)
@@ -126,9 +131,9 @@ def main():
         "print_iterations":options.checkpoint_iterations,
         "batch_size":options.batch_size,
         "save_path":os.path.join(options.checkpoint_dir,'fns.ckpt'),
-        "learning_rate":options.learning_rate
+        "learning_rate":options.learning_rate,
     }
-
+    
     if options.slow:
         if options.epochs < 10:
             kwargs['epochs'] = 1000
@@ -162,6 +167,9 @@ def main():
     ckpt_dir = options.checkpoint_dir
     cmd_text = 'python evaluate.py --checkpoint %s ...' % ckpt_dir
     print("Training complete. For evaluation:\n    `%s`" % cmd_text)
+    print('Converting model to ml5js')
+    dump_checkpoints(kwargs['save_path'], options.model_dir)
+    print('Done! Checkpoint saved. Visit https://ml5js.org/docs/StyleTransfer for more information')
 
 if __name__ == '__main__':
     main()
