@@ -1,7 +1,7 @@
 #! /bin/bash
 
 python style.py --style images/matildeperez.jpg \
-  --checkpoint-dir checkpoint/ \
+  --checkpoint-dir checkpoints/ \
   --test images/violetaparra.jpg \
   --test-dir tests/ \
   --content-weight 1.5e1 \
