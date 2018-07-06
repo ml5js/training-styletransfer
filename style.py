@@ -1,6 +1,7 @@
 from __future__ import print_function
 import sys, os, pdb
 sys.path.insert(0, 'src')
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import numpy as np, scipy.misc 
 from optimize import optimize
 from argparse import ArgumentParser
@@ -115,6 +116,8 @@ def _get_files(img_dir):
 
     
 def main():
+    print('ml5.js Style Transfer Training!')
+    print('Note: This traning will take a couple of hours.')
     parser = build_parser()
     options = parser.parse_args()
     check_opts(options)
@@ -149,7 +152,7 @@ def main():
         options.vgg_path
     ]
 
-    print('Training is starting!')
+    print('Training is starting!...')
     for preds, losses, i, epoch in optimize(*args, **kwargs):
         style_loss, content_loss, tv_loss, loss = losses
 
