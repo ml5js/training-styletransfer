@@ -4,7 +4,7 @@ This repository contains a slightly modified version of [Fast Style Transfer in 
 
 **Notes**: 
 - You should train your network using a GPU. Just using CPU will result in training times of [several months](https://github.com/lengstrom/fast-style-transfer/issues/92) :calendar:
-- [Here]() is a blog post describing how to train your own custom style with [Paperspace](). This is the easiest way to get up and running without installing dependencies and libraries.
+- [Here]() is a blog post describing how to train your own custom style with [Paperspace](https://www.paperspace.com/). This is the easiest way to get up and running without installing dependencies and libraries.
 
 ## Requirements
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 Put the image you want to train the style on, in the `/images` folder.
 
-### 4) Star the training
+### 4) Start the training
 
 To train a new style transfer network you can use open the `run.sh` script, modified the `--style` argument to point to your image and run:
 
@@ -69,9 +69,16 @@ You can learn more about how to use all the parameters for training in the on th
 
 Once the training setup is ready, you should see something like this:
 
-```bash
+```
 ml5.js Style Transfer Training!
 Note: This traning will take a couple of hours.
+Training is starting!...
+Train set has been trimmed slightly..
+(1, 451, 670, 3)
+UID: 56
+Epoch 0, Iteration: 1000, Loss: 1.75362e+07
+style: 5.5727e+06, content:1.15116e+07, tv: 451984.0
+...
 Training complete. For evaluation:
     `python evaluate.py --checkpoint checkpoints/ ...`
 Converting model to ml5js
@@ -84,7 +91,7 @@ Done! Checkpoint saved. Visit https://ml5js.org/docs/StyleTransfer for more info
 Once the model is ready, your model will be in the `models/` folder. You will just need to point to it in your ml5 sketch:
 
 ```javascript
-const lstm = new ml5.styleTransfer('./models/your_new_model');
+const style = new ml5.styleTransfer('./models/your_new_model');
 ```
 
-Chech [ml5.js documentation](https://ml5js.org/docs/StyleTransfer) on the `styleTransfer()` method or the [example](https://ml5js.org/docs/style-transfer-image-example).
+Check [ml5.js documentation](https://ml5js.org/docs/StyleTransfer) on the `styleTransfer()` method or the [style transfer simple example](https://ml5js.org/docs/style-transfer-image-example).
