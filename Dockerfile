@@ -11,8 +11,8 @@ RUN add-apt-repository ppa:mc3man/xerus-media
 RUN apt-get update && apt-get install -y ffmpeg
 
 # Copy all files in directory
-# COPY . /styletransfer
-COPY requirements.txt /styletransfer
+COPY . /styletransfer
+# COPY requirements.txt /styletransfer
 
 WORKDIR "/styletransfer"
 
