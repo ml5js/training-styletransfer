@@ -3,7 +3,7 @@
 This repository contains a slightly modified version of [Fast Style Transfer in TensorFlow](https://github.com/lengstrom/fast-style-transfer). It trains a neural network on the style of any image you provide it and outputs a model you can use in [ml5.js](https://ml5js.org/) with the [ml5.styleTransfer()](https://ml5js.org/docs/StyleTransfer) method.
 
 **Notes**: 
-- **[Here]()** is a blog post describing how to train your own custom style with [Paperspace](https://www.paperspace.com/). **This is the easiest way to get up and running without installing dependencies and libraries.**
+- **[Here](https://blog.paperspace.com/creating-your-own-style-transfer-mirror/)** is a blog post describing how to train your own custom style with [Paperspace](https://www.paperspace.com/). **This is the easiest way to get up and running without installing dependencies and libraries.**
 - You should train your network using a GPU. Just using CPU will result in training times of [several months](https://github.com/lengstrom/fast-style-transfer/issues/92) :calendar:
 - Training requires access to the [COCO Dataset](http://cocodataset.org/#home). COCO is a large-scale object detection, segmentation, and captioning dataset. The version of the dataset we will be using is about 14GB in total. The docker image will download and unzip it.
 
