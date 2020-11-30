@@ -10,10 +10,17 @@ This repository contains a slightly modified version of [Fast Style Transfer in 
 
 ## Requirements
 
-- Set up a python environment with tensorflow installed. [More detailed instructions here](https://ml5js.org/docs/training-setup). 
+### Set-up Python Environment
+
+This first step of using a python "virtual environment" ([venv video tutorial](https://youtu.be/nnhjvHYRsmM)) is recommended but not required.
+
+```bash
+$ python3 -m venv your_venv_name
+$ source your_venv_name/bin/activate
+```
+### Docker
 
 - You can also use this Docker [container](https://hub.docker.com/r/cvalenzuelab/styletransfer/) that comes preinstalled with everything you need. Instructions are available below.
-
 
 ## Usage
 
