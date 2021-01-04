@@ -1,5 +1,14 @@
 # Style Transfer training and using the model in ml5js
 
+## Update (1/4/2021)
+This repository is not actively maintained (if you'd like to help please file an issue!). If you are looking to train an ml5.js compatible model, please see the following resources:
+
+* [Colab Notebook: Train and Style Transfer model and run it in ml5.js/tf.js](https://colab.research.google.com/drive/1TZNdhoUEBoxQqY5EFloZcuyYUs9oNQ-g?usp=sharing)
+* [Machine Learning for the Web course notes](https://github.com/yining1023/machine-learning-for-the-web/tree/master/week5-styleTransfer#coding-session)
+
+
+## Outdated notes
+
 This repository contains a slightly modified version of [Fast Style Transfer in TensorFlow](https://github.com/lengstrom/fast-style-transfer). It trains a neural network on the style of any image you provide it and outputs a model you can use in [ml5.js](https://ml5js.org/) with the [ml5.styleTransfer()](https://ml5js.org/docs/StyleTransfer) method.
 
 **Notes**: 
